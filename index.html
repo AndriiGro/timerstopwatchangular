@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="timerApp">
+<head>
+<title>Timer&Stopwatch</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+<script src="timer.js"> </script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Stopwatch</h1>
+
+<div ng-controller="TimerController as vm">
+
+{{vm.minutes | numberFixedLen:2}}:{{vm.seconds | numberFixedLen:2}}:{{vm.microseconds | numberFixedLen:2}}
+
+<button type="button" id="startButton" ng-click="vm.startTimer()">Start</button>
+
+<button type="button" id="stopButton" ng-click="vm.stopTimer()">Stop</button>
+
+<button type="button" id="resetButton" ng-reset="vm.resetTimer()">Reset</button>
+
+<h1>Timer</h1>
+
+<input type="text" ng-model="vm.secondsTimer" placeholder="Seconds: "/>
+<button type="button" id="countdownButton" ng-click="vm.startCountdown()" ng-class="vm.btnClass">Start countdown</button>
+<p>{{vm.secondsTimer}}</p>
+</div>
+</body>
+</html>
