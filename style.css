@@ -1,0 +1,13 @@
+.flash {
+	color: red;
+	
+	transition: color 0.3s;
+	
+	
+}
+
+.boo {
+	color: black;
+	transition: color 0.2s;
+}
+
