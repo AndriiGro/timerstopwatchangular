@@ -1,0 +1,2 @@
+# timerstopwatchangular
+Experiments with angularJS 
