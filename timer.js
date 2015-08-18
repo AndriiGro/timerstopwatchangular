@@ -48,7 +48,8 @@
 		};
 		
 		vm.resetTimer = function(){
-			vm.stopTimer();
+			//vm.stopTimer();
+			$interval.cancel(stop);
 			vm.seconds = 0;
 			vm.minutes = 0;
 			vm.microseconds = 0;
