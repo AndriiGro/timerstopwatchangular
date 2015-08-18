@@ -15,7 +15,7 @@
 	function TimerController($interval){
 		var vm = this;
 		
-		vm.seconds = 0;
+		vm.seconds = 100;
 		vm.minutes = 0;
 		vm.microseconds = 0;
 		vm.secondsTimer = 0;
