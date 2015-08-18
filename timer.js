@@ -50,6 +50,7 @@
 		vm.resetTimer = function(){
 			//vm.stopTimer();
 			$interval.cancel(stop);
+			stop = undefined;
 			vm.seconds = 0;
 			vm.minutes = 0;
 			vm.microseconds = 0;
