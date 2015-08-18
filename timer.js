@@ -55,46 +55,36 @@
 		};
 		
 		var temp = true; 
-		vm.startCountdown = function(){
-			
+		vm.startCountdown = function()
+		{	
 						
-			inteSec = $interval(function(){
+			inteSec = $interval(function()
+			{
 				
-				if(vm.secondsTimer == 0)
+				if(vm.secondsTimer > 0)
 				{
-					vm.noflashButton();
-					return;}
-					
-				if(vm.secondsTimer > 5)
-				{
-					if(temp == true)
-					{
+				
 						vm.secondsTimer--;
-						temp = false;
-					}
-					else{
-						temp = true;
-					}
-				}
+						if(vm.secondsTimer < 6)
+							{
+							vm.flashButton().done(vm.noflashButton());
+							//setTimeout(vm.noflashButton, 200);	
+							}
+				}		
 				
-				if(vm.secondsTimer <=5 && temp == true)
-				{
-					vm.secondsTimer--;
-					vm.flashButton();
-					temp = false;
-					return;
-				}
-				if(vm.secondsTimer <=5 && temp == false)
-				{
-					vm.noflashButton();
-					temp = true;
-				}
 				
-				}, 500);
+			}, 1000);
 		};
 		
 		vm.flashButton = function(){
+		var r = $.Deferred();
 			vm.btnClass = "flash";
+			setTimeout(function () {
+    
+    r.resolve();
+  }, 400);
+
+			return r;
 			//vm.btnClass = "";
 		};
 		vm.noflashButton = function(){
